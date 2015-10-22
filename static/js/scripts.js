@@ -6,7 +6,7 @@ angular.module('project', ['projectApi']).
       when('/new', {controller:CreateCtrl, templateUrl:BASE_URL+'projects/template_detail'}).
       otherwise({redirectTo:'/'});
   });
-
+//this function lists Controls
 function ListCtrl($scope, $location, Project) {
 
   $scope.projects = Project.query();
