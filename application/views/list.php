@@ -1,4 +1,5 @@
 <input type="text" ng-model="search" class="search-query" placeholder="Search">
+<!-- This is the beginig of the table -->
 <table class="table table-hover">
   <thead>
   <tr>
