@@ -25,7 +25,7 @@ class Projects extends REST_Controller {
 	{
 		if ( ! $id)
 		{
-			$this->response(array('status' => false, 'error_message' => 'No ID was provided.'), 400);
+			$this->response(array('status' => false, 'error_message' => 'Missing Id property.'), 400);
 		}
 
 		$this->response($this->project_model->get($id));
@@ -36,12 +36,12 @@ class Projects extends REST_Controller {
 		if ( ! $id)
 		{
 			$new_id = $this->project_model->add($this->post());
-			$this->response(array('status' => true, 'id' => $new_id, 'message' => sprintf('Project #%d has been created.', $new_id)), 200);
+			$this->response(array('status' => true, 'id' => $new_id, 'message' => sprintf('Project #%d was created.', $new_id)), 200);
 		}
 		else
 		{
 			$this->project_model->update($id, $this->post());
-			$this->response(array('status' => true, 'message' => sprintf('Project #%d has been updated.', $id)), 200);
+			$this->response(array('status' => true, 'message' => sprintf('Project #%d was updated.', $id)), 200);
 		}
 	}
 
